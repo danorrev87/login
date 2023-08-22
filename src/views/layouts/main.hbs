@@ -1,0 +1,18 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{! Enlazamos el archivo de estilo CSS correspondiente. Este se determinará dinámicamente en función de la vista que se esté renderizando. }}
+    {{!-- <link rel="stylesheet" href="css/{{style}}" /> --}}
+    <title>Express Server</title>
+  </head>
+  <body>
+    <header>Navbar</header>
+
+    {{! El contenido principal de cada vista se renderizará aquí.  }}
+    {{{body}}}
+
+    <footer>Footer</footer>
+  </body>
+</html>

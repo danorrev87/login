@@ -1,0 +1,39 @@
+<input type="hidden" id="currentCartId" value="{{cartId}}">
+<p style="color:red"><strong>{{error}}</strong></p>
+<a id="cartUrl" style="display: none;">Ver mi carrito</a>
+
+<p>Bienvenido {{user.first_name}}!</p>
+
+<a href="/api/sessions/logout">
+  Cerrar sesion
+</a>
+
+<p>
+<a href="/perfil">
+  Perfil
+</a>
+</p>
+
+{{#if payload}}
+<h1>Listado de Productos</h1>
+<ul>
+  {{#each payload}}
+  <li>Nombre: {{this.title}} Precio: {{this.price}}</li>
+  <button onclick="addToCart('{{this._id}}')">Agregar al carrito</button>
+  {{/each}}
+</ul>
+
+{{#if hasPrevPage}}
+<a href="{{prevLink}}">Anterior</a>
+{{/if}}
+
+{{page}}
+
+{{#if hasNextPage}}
+<a href="{{nextLink}}">Siguiente</a>
+{{/if}}
+{{else}}
+<h2>No hay productos</h2>
+{{/if}}
+
+<script src="/js/home.js"></script>

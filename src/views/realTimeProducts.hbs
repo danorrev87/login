@@ -1,0 +1,61 @@
+<h1>Lista de productos (en tiempo real):</h1>
+
+<div class="forms">
+  {{! El primer formulario permite a los usuarios agregar un producto a la lista.  }}
+  <div>
+    <form id="addForm">
+      <p>Agregar productos:</p>
+      <div>
+        <label for="title">Producto:</label>
+        <input type="text" id="title" name="title" />
+        <label for="description">Descripción:</label>
+        <input type="text" id="description" name="description" />
+        <label for="price">Precio:</label>
+        <input type="number" id="price" name="price" />
+        <label for="thumbnails">Miniatura:</label>
+        <input type="text" id="thumbnails" name="thumbnails" />
+        <label for="code">Código:</label>
+        <input type="number" id="code" name="code" />
+        <label for="stock">Cantidad:</label>
+        <input type="number" id="stock" name="stock" />
+        <label for="status">Estado:</label>
+        <input type="text" id="status" name="status" />
+        <label for="category">Categoría:</label>
+        <input type="text" id="category" name="category" />
+        <button type="submit" id="add">Agregar producto</button>
+      </div>
+    </form>
+  </div>
+
+  {{! El segundo formulario permite a los usuarios eliminar un producto de la lista proporcionando su ID. }}
+  <div>
+    <form id="deleteForm">
+      <p>Eliminar producto:</p>
+      <label for="id">ID Producto:</label>
+      <input type="number" id="id" name="id" />
+      <button type="submit">Eliminar producto</button>
+    </form>
+  </div>
+</div>
+
+{{! Cada producto se muestra con sus propiedades }}
+<ul id="productList">
+  {{#each products}}
+    <li>
+      <h2>Producto:{{title}}</h2>
+      <p>ID: {{id}}</p>
+      <p>Descripción:{{description}}</p>
+      <p>Precio: {{price}}</p>
+      <img src="{{thumbnail}}" alt="Imagen producto" />
+      <p>Código: {{code}}</p>
+      <p>Stock: {{stock}}</p>
+      <p>Estado: {{status}}</p>
+      <p>Categoría: {{category}}</p>
+    </li>
+  {{/each}}
+</ul>
+
+{{! "socket.io.js", permite la comunicación en tiempo real entre el servidor y el cliente.
+"realtimeproducts.js", proporciona la funcionalidad para actualizar la lista de productos en tiempo real . }}
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realtimeproducts.js"></script>

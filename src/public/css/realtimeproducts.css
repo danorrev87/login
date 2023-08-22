@@ -1,0 +1,131 @@
+/* Reset de margen y padding para todos los elementos del DOM, y establecimiento del box-sizing en border-box para incluir el padding y el borde en el tamaño total del elemento */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuración de la fuente para todo el cuerpo del documento y padding superior para evitar la superposición con el encabezado fijo */
+body {
+    font-family: Arial, sans-serif;
+    padding: 3rem 0 0 0;
+}
+
+/* Encabezado fijo en la parte superior de la página con una altura de 3rem y un color de fondo específico */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 3rem;
+    background-color: rgb(218, 184, 139);
+}
+
+/* Centrado del texto para los elementos h1 y margen inferior para espacio adicional */
+h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Uso de Flexbox para colocar los formularios en filas y espaciarlos uniformemente, y margen adicional alrededor para separación */
+.forms {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 10rem;
+}
+
+/* Estilo general para los formularios: padding, borde, bordes redondeados, margen inferior, color de fondo */
+form {
+    width: 90%;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+}
+
+/* Configuración de Flexbox en divs dentro de formularios para un layout flexible */
+form div {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+/* Centrado del texto y negrita para los párrafos dentro de los formularios, y margen inferior adicional */
+form p {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Estilo general para los botones dentro de los formularios: padding, bordes redondeados, cursor, bloque de visualización, margen */
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 1rem auto 0 auto;
+}
+
+/* Configuración adicional de Flexbox y justificación del espacio entre los elementos para el formulario de agregar */
+#addForm {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Centrado del párrafo dentro del formulario de agregar */
+#addForm p {
+    margin: auto;
+}
+
+/* Anchura, margen superior para las etiquetas y las entradas en el formulario de agregar */
+#addForm label,
+#addForm input {
+    width: 48%;
+    margin-top: 0.3rem;
+}
+
+/* Color de fondo y color de texto para el botón en el formulario de agregar */
+#addForm button {
+    background-color: blue;
+    color: white;
+}
+
+/* Estilo específico para el formulario de eliminar: ajuste de anchura */
+#deleteForm {
+    width: auto;
+}
+
+/* Color de fondo y color de texto para el botón en el formulario de eliminar */
+#deleteForm button {
+    background-color: red;
+    color: white;
+}
+
+/* Configuración de Flexbox en la lista no ordenada para un layout de cuadrícula flexible */
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
+}
+
+/* Estilo para los elementos de la lista: borde, margen, sin estilos de lista, padding, tamaño flexible, sombra de caja, color de fondo */
+li {
+    border: 1px solid black;
+    margin: 1rem;
+    list-style: none;
+    padding: 1rem;
+    flex: 0 0 calc(33.33% - 2rem);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f0f0f0;
+}
+
+/* Estilo para el pie de página: ancho, altura, color de fondo */
+footer {
+    width: 100%;
+    height: 5rem;
+    background-color: rgb(218, 184, 139);
+}
